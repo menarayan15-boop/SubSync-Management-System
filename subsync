@@ -1,0 +1,20 @@
+SubSync - Modern SaaS Subscription & Membership Management Platform
+====================================================================
+
+Repository: https://github.com/menarayan15-boop/SubSync-Management-System
+Framework: MERN Stack (MongoDB, Express.js, React.js, Node.js)
+UI Design: Light-mode Glassmorphism, Aurora Gradients, Bento Grid
+
+Core Modules & Features:
+1. SubSync Intelligence (AI Subscription Advisor, Contract Sentinel, Velocity Forecast)
+2. Subscription Gifting Engine (Redeemable 16-character gift vouchers)
+3. Skill Passport & Digital Vault (50+ curated developer & business PDF handbooks)
+4. Family & Team Workspaces (Split billing & seat management)
+5. Trust Center (Compliance, AES-256 security transparency, uptime monitor)
+6. Smart Subscription Scanner (OCR invoice & receipt processing)
+7. 1-Click Cancellation Assistant (Step-by-step guides & legal letters)
+8. Subscription Budget Planner (Category limits, CSV/PDF financial export)
+9. Discovery & Comparison Hub (Curated SaaS directory & side-by-side comparison)
+10. Rewards & Loyalty Engine (Tier progression, referral links & voucher redemption)
+
+For detailed technical documentation, please refer to subsync.md and README.md.
