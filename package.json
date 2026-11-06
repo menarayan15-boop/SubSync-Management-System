@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "type": "module",
   "description": "SubSync - Modern SaaS Subscription & Membership Management Platform",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "dev:backend": "cd backend && npm run dev",
-    "dev:frontend": "cd frontend && npm run dev",
-    "start": "cd backend && npm start",
-    "build": "cd frontend && npm run build",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "start": "npm --prefix backend start",
+    "build": "npm --prefix frontend install && npm --prefix frontend run build",
     "test": "node scratch/run_e2e_suite.js",
-    "seed": "cd backend && npm run seed"
+    "seed": "npm --prefix backend run seed"
   },
   "keywords": [
     "subsync",

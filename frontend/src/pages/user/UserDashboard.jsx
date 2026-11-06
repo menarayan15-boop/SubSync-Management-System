@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useNotifications } from '../../context/NotificationContext';
-import api from '../../services/api';
+import api, { getApiBaseUrl } from '../../services/api';
 import { StatusBadge, TierBadge } from '../../components/common/Badge';
 import { DynamicCommentCard } from '../../components/common/DynamicCommentCard';
 import { MembershipCard } from '../../components/common/MembershipCard';
@@ -338,7 +338,7 @@ const UserDashboard = () => {
 
   const handleDownloadInvoice = (invoiceId) => {
     const token = localStorage.getItem('subsync_token') || '';
-    const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    const baseUrl = getApiBaseUrl();
     window.open(`${baseUrl}/invoices/${invoiceId}/download?token=${encodeURIComponent(token)}`, '_blank');
   };
 
@@ -1323,7 +1323,7 @@ const UserDashboard = () => {
                           const resObj = d.resource || {};
                           const token = localStorage.getItem('subsync_token') || '';
                           const resId = resObj._id || d.resource;
-                          const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+                          const baseUrl = getApiBaseUrl();
                           const fileUrl = `${baseUrl}/resources/${resId}/file?token=${encodeURIComponent(token)}`;
 
                           return (

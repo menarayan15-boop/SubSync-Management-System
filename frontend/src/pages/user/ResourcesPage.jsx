@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import api from '../../services/api';
+import api, { getApiBaseUrl } from '../../services/api';
 import { TierBadge } from '../../components/common/Badge';
 import {
   Search,
@@ -162,7 +162,7 @@ export const ResourcesPage = () => {
 
         // Trigger real authenticated file download
         const token = localStorage.getItem('subsync_token') || '';
-        const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+        const baseUrl = getApiBaseUrl();
         const fileStreamUrl = `${baseUrl}/resources/${resource._id}/file?token=${encodeURIComponent(token)}`;
 
         const a = document.createElement('a');

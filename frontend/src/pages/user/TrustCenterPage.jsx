@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import api from '../../services/api';
+import api, { getApiBaseUrl } from '../../services/api';
 import {
   ShieldCheck,
   CreditCard,
@@ -52,13 +52,13 @@ const TrustCenterPage = () => {
 
   const handleDownloadInvoice = (invoiceId) => {
     const token = localStorage.getItem('subsync_token') || '';
-    const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    const baseUrl = getApiBaseUrl();
     window.open(`${baseUrl}/invoices/${invoiceId}/download?token=${encodeURIComponent(token)}`, '_blank');
   };
 
   const handleExportData = () => {
     const token = localStorage.getItem('subsync_token') || '';
-    const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    const baseUrl = getApiBaseUrl();
     window.open(`${baseUrl}/trust/export-data?token=${encodeURIComponent(token)}`, '_blank');
   };
 

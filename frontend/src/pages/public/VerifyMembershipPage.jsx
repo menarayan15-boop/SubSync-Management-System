@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../services/api';
 import {
   ShieldCheck,
   ShieldAlert,
@@ -14,7 +14,6 @@ import {
   Layers,
 } from 'lucide-react';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export const VerifyMembershipPage = () => {
   const [searchParams] = useSearchParams();
@@ -34,7 +33,7 @@ export const VerifyMembershipPage = () => {
     const verify = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`${API_BASE}/membership/verify`, {
+        const res = await api.get('/membership/verify', {
           params: { token },
         });
 
